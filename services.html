@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - TruckFix Mobile Diesel Truck Repair</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="Explore our premium mobile heavy-duty diesel repair, preventative maintenance, and commercial fleet solutions.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'accent': '#2563EB', /* Royal Blue */
+            'highlight': '#2563EB', /* Royal Blue */
+            'brand-dark': '#0F172A', /* Dark Navy */
+            'brand-light': '#FFFFFF', /* White */
+            'brand-muted': '#64748B' /* Cool Gray */
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen">
+
+  <nav class="bg-brand-light dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-[90px]">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-semibold tracking-tight text-brand-dark dark:text-brand-light uppercase">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center gap-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] start-0 w-56 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              About
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-accent transition-colors py-2">
+              Services
+              <span class="absolute bottom-0 start-0 w-full h-[2px] bg-accent transition-all duration-300"></span>
+            </a>
+            
+            <a href="industries.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Industries
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Blog
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Contact
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] end-0 w-64 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+                  </a>
+                  <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user w-6 me-2"></i> User Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center gap-4">
+          
+          <button type="button" onclick="window.location.href='login.html'" class="bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2"></div>
+
+          <button id="theme-toggle" class="relative w-[72px] h-[34px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[9px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LIGHT</span>
+            <span class="text-[9px] font-medium text-accent absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DARK</span>
+            
+            <div class="w-[24px] h-[24px] bg-white dark:bg-brand-dark border border-gray-200 dark:border-gray-600 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[38px] ltr:dark:translate-x-[38px] dark:translate-x-[38px] z-10">
+              <i class="fas fa-sun text-[11px] text-highlight dark:hidden block"></i>
+              <i class="fas fa-moon text-[11px] text-accent hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <button id="rtl-toggle" class="text-xs font-medium text-gray-400 hover:text-accent transition-colors duration-300 ms-2" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-brand-light hover:text-accent focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-brand-light dark:bg-[#1E293B] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-accent/20 ms-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Services</a>
+        <a href="industries.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Industries</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 flex flex-col gap-4 ps-4 border-s-2 border-accent/20 ms-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+            </a>
+            <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6 me-2"></i> User Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col gap-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-4 py-3.5 font-semibold uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-4 py-3.5 font-medium uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+          
+          <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-100 dark:border-white/5 mt-4">
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <span class="dark:hidden flex items-center text-highlight"><i class="fas fa-sun me-2"></i> Light Active</span>
+              <span class="hidden dark:flex items-center text-accent"><i class="fas fa-moon me-2"></i> Dark Active</span>
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-accent transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <i class="fas fa-language me-2 text-lg"></i> RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow flex flex-col pt-[90px]">
+    <section class="py-16 lg:py-24 bg-brand-dark text-brand-light relative overflow-hidden">
+      <div class="absolute top-0 end-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 start-0 w-80 h-80 bg-highlight/10 rounded-full blur-3xl"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+          Our Fleet <span class="text-accent">Services</span>
+        </h1>
+        <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto font-medium">
+          Comprehensive heavy-duty diesel repair, computer diagnostics, and preventative maintenance brought directly to your location. Minimize downtime with our expert mechanical packages.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Emergency Response (70+ lines) -->
+    <section class="py-24 bg-white dark:bg-[#0B1120] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+          
+          <div class="lg:w-1/2 relative">
+            <div class="aspect-square rounded-full bg-accent/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] -z-10 animate-pulse-slow"></div>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
+              <img src="images/fleet_yard.png" alt="Emergency Roadside Repair" class="w-full h-full object-cover">
+              <!-- Overlay stats -->
+              <div class="absolute bottom-6 right-6 bg-white dark:bg-brand-dark p-4 rounded-xl shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400">
+                  <i class="fas fa-exclamation-triangle text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500 font-bold uppercase tracking-widest">Status</div>
+                  <div class="text-lg font-black text-brand-dark dark:text-brand-light">Dispatched</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:w-1/2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+              <div class="w-2 h-2 rounded-full bg-red-500 animate-ping"></div> Priority Zero
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">24/7 EMERGENCY <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">ROADSIDE RESCUE</span></h2>
+            <p class="text-brand-muted dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              When you're loaded and stuck on the shoulder, every minute bleeds profit. Our emergency response units skip the queue and head directly to your GPS coordinates.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-[#1E293B] border border-gray-100 dark:border-gray-700 flex items-center justify-center text-accent shrink-0 text-xl">
+                  <i class="fas fa-gas-pump"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-2">Fuel Delivery & Priming</h4>
+                  <p class="text-sm text-brand-muted dark:text-gray-400 leading-relaxed">Ran dry? We deliver up to 50 gallons of diesel and manually prime your fuel system so you don't burn out your starter motor trying to catch.</p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-[#1E293B] border border-gray-100 dark:border-gray-700 flex items-center justify-center text-accent shrink-0 text-xl">
+                  <i class="fas fa-snowflake"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-2">Reefer Unit Repair</h4>
+                  <p class="text-sm text-brand-muted dark:text-gray-400 leading-relaxed">Temperature critical loads can't wait for morning. Our techs are Carrier and Thermo King certified to fix belts, alternators, and Freon leaks on the spot.</p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-[#1E293B] border border-gray-100 dark:border-gray-700 flex items-center justify-center text-accent shrink-0 text-xl">
+                  <i class="fas fa-car-battery"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-2">Jumpstarts & Electrical</h4>
+                  <p class="text-sm text-brand-muted dark:text-gray-400 leading-relaxed">Dead batteries in the dead of winter? We carry heavy-duty 12V/24V jump boxes and replacement commercial batteries to get you cranking immediately.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-10">
+              <a href="tel:919876543210" class="inline-flex items-center justify-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-widest text-sm transition-all rounded shadow-xl shadow-red-600/30 gap-3">
+                <i class="fas fa-phone-alt"></i> Call Emergency Dispatch
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Diagnostics (70+ lines) -->
+    <section class="py-24 bg-gray-50 dark:bg-[#111827] relative border-y border-gray-200 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <span class="text-accent font-semibold tracking-widest uppercase text-xs mb-3 block">OEM Level Tech</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">ADVANCED <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">DIAGNOSTICS</span></h2>
+          <p class="text-brand-muted dark:text-gray-400 text-lg max-w-2xl mx-auto">Modern trucks are rolling computers. We bring dealer-level software directly to your yard, avoiding expensive tow bills to the dealership.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Code Clearing</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">We don't just clear check engine lights; we read the active and inactive fault codes to tell you exactly what triggered the light and whether it's safe to continue driving or requires immediate repair.</p>
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+              <li><i class="fas fa-check text-accent mr-2"></i> Cummins INSITE</li>
+              <li><i class="fas fa-check text-accent mr-2"></i> Detroit Diagnostic Link</li>
+            </ul>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+              <i class="fas fa-wind"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Forced Regens</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">DPF clogged and putting your truck in derate mode? We can perform mobile forced regenerations to burn off soot buildup, clear the derate, and restore full engine power on the highway.</p>
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+              <li><i class="fas fa-check text-accent mr-2"></i> DPF Soot Level Reset</li>
+              <li><i class="fas fa-check text-accent mr-2"></i> SCR System Checks</li>
+            </ul>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Parameter Changes</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">Need your fleet's top speed adjusted? We can modify ECM parameters including road speed limits, cruise control limits, idle shutdown timers, and PTO configurations.</p>
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+              <li><i class="fas fa-check text-accent mr-2"></i> Speed Limiter Adjust</li>
+              <li><i class="fas fa-check text-accent mr-2"></i> Idle Timer Setup</li>
+            </ul>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Module Programming</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">Replacing a faulty control module usually means a tow to the dealer. Our techs can flash and program new ECMs, ACMs, and TCMs right in your yard.</p>
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+              <li><i class="fas fa-check text-accent mr-2"></i> ECM Flashing</li>
+              <li><i class="fas fa-check text-accent mr-2"></i> Injector Coding</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-16 bg-brand-dark dark:bg-[#1E293B] rounded-2xl p-8 lg:p-12 border border-accent flex flex-col md:flex-row items-center justify-between shadow-[0_0_50px_rgba(37,99,235,0.15)]">
+          <div class="mb-6 md:mb-0 md:mr-8 text-center md:text-left">
+            <h4 class="text-2xl font-bold text-white mb-2">Supported Engine Platforms</h4>
+            <p class="text-gray-400 text-sm">We carry software for Cummins, Detroit Diesel, PACCAR, Volvo/Mack, International, and CAT.</p>
+          </div>
+          <div class="flex gap-4 flex-wrap justify-center">
+            <span class="px-4 py-2 bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded border border-white/20">Cummins</span>
+            <span class="px-4 py-2 bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded border border-white/20">PACCAR</span>
+            <span class="px-4 py-2 bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded border border-white/20">Volvo</span>
+            <span class="px-4 py-2 bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded border border-white/20">Detroit</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- SECTION 4: Parts & Warranty (50+ lines) -->
+    <section class="py-20 bg-white dark:bg-[#0B1120] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gray-50 dark:bg-[#1E293B] rounded-[2.5rem] p-10 lg:p-16 border border-gray-100 dark:border-white/5 relative overflow-hidden">
+          
+          <div class="absolute top-0 right-0 w-1/2 h-full bg-[url('https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-10 dark:opacity-20"></div>
+          <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-transparent to-gray-50 dark:to-[#1E293B]"></div>
+          
+          <div class="relative z-10 max-w-2xl">
+            <span class="text-accent font-semibold tracking-widest uppercase text-xs mb-4 block"><i class="fas fa-shield-check mr-2"></i> Quality Assurance</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">OEM PARTS & <br/>NATIONWIDE WARRANTY.</h2>
+            <p class="text-brand-muted dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              A repair is only as good as the parts used. We refuse to compromise your fleet's integrity with cheap aftermarket knockoffs.
+            </p>
+            
+            <div class="grid sm:grid-cols-2 gap-8 mb-10">
+              <div>
+                <h4 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3 flex items-center gap-2"><i class="fas fa-box text-accent"></i> Mobile Inventory</h4>
+                <p class="text-sm text-brand-muted dark:text-gray-400 leading-relaxed">Each of our service trucks is stocked with over $20,000 in common OEM parts including air valves, brake chambers, belts, hoses, and sensors to ensure a first-call fix rate of 85%.</p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3 flex items-center gap-2"><i class="fas fa-award text-accent"></i> 12-Month Guarantee</h4>
+                <p class="text-sm text-brand-muted dark:text-gray-400 leading-relaxed">We stand behind our work. Every part supplied and installed by TruckFix comes with a standard 12-month / 100,000-mile warranty covering both parts and labor.</p>
+              </div>
+            </div>
+            
+            <div class="mt-8 border-t border-gray-200 dark:border-gray-700 pt-8">
+              <p class="text-xs uppercase tracking-widest text-brand-muted mb-4 font-bold">Trusted Parts Partners</p>
+              <div class="flex flex-wrap items-center gap-8">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded bg-white dark:bg-black flex items-center justify-center font-bold text-brand-dark dark:text-brand-light text-xs border border-gray-200 dark:border-gray-800">C</div>
+                  <span class="text-sm font-bold text-brand-muted">Cummins</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded bg-white dark:bg-black flex items-center justify-center font-bold text-brand-dark dark:text-brand-light text-xs border border-gray-200 dark:border-gray-800">D</div>
+                  <span class="text-sm font-bold text-brand-muted">Detroit</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded bg-white dark:bg-black flex items-center justify-center font-bold text-brand-dark dark:text-brand-light text-xs border border-gray-200 dark:border-gray-800">B</div>
+                  <span class="text-sm font-bold text-brand-muted">Bendix</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded bg-white dark:bg-black flex items-center justify-center font-bold text-brand-dark dark:text-brand-light text-xs border border-gray-200 dark:border-gray-800">M</div>
+                  <span class="text-sm font-bold text-brand-muted">Meritor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CTA (50+ lines) -->
+    <section class="py-24 bg-accent relative overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-bounce">
+          <i class="fas fa-truck text-3xl text-accent"></i>
+        </div>
+        
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight uppercase">Ready to Book a Service?</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10 font-medium">
+          Don't wait for a breakdown to find a reliable mechanic. Set up your fleet account today and get priority dispatch when you need it most.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto">
+          <a href="register.html" class="flex items-center justify-center px-8 py-5 bg-white text-accent font-black uppercase tracking-widest text-sm hover:bg-gray-100 transition-colors rounded-lg shadow-xl w-full sm:w-auto gap-3">
+            <i class="fas fa-user-plus"></i> Create Account
+          </a>
+          <a href="contact.html" class="flex items-center justify-center px-8 py-5 bg-transparent border-2 border-white text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-colors rounded-lg w-full sm:w-auto gap-3">
+            <i class="fas fa-envelope"></i> Message Sales
+          </a>
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-center items-center gap-8">
+          <div class="flex -space-x-4">
+            <img class="w-12 h-12 rounded-full border-2 border-accent object-cover" src="images/truck_fleet.png" alt="">
+            <img class="w-12 h-12 rounded-full border-2 border-accent object-cover" src="images/mechanic_portrait.png" alt="">
+            <img class="w-12 h-12 rounded-full border-2 border-accent object-cover" src="images/diesel_repair_highway.png" alt="">
+            <div class="w-12 h-12 rounded-full border-2 border-accent bg-brand-dark flex items-center justify-center text-white font-bold text-xs">+15</div>
+          </div>
+          <div class="text-left">
+            <div class="flex text-yellow-400 text-sm mb-1">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-white text-sm font-medium">Trusted by 500+ local fleets.</p>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-white/70 text-xs uppercase tracking-widest font-bold flex justify-center items-center gap-4">
+          <span>We Accept:</span>
+          <i class="fab fa-cc-visa text-xl"></i>
+          <i class="fab fa-cc-mastercard text-xl"></i>
+          <i class="fab fa-cc-amex text-xl"></i>
+          <span class="border border-white/30 px-2 py-0.5 rounded">COMCHEK</span>
+          <span class="border border-white/30 px-2 py-0.5 rounded">EFS</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-dark text-brand-light pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-semibold tracking-tight uppercase mb-6 text-brand-light">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></h3>
+          <p class="text-brand-muted mb-8 font-medium leading-relaxed text-base">
+            Providing elite on-site diesel truck repair and preventative fleet management to minimize your operational downtime. We come to you.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-twitter text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-youtube text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Home</a></li>
+            <li><a href="about.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">About Us</a></li>
+            <li><a href="industries.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Industries</a></li>
+            <li><a href="blog.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Fleet Care Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Our Services</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Emergency Roadside Repair</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Diesel Engine Diagnostics</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Brake & Suspension Service</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Preventative Maintenance (PM)</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">DOT Inspections & Electrical</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Contact Us</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-highlight mt-1 me-4 text-base"></i>
+              <span class="text-base text-brand-muted font-medium">Serving Salem, Tamil Nadu, India & Surrounding Fleet Routes</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-highlight me-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-highlight me-4 text-base"></i>
+              <a href="mailto:info@truckfix.com" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">info@truckfix.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-brand-muted text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 TruckFix Mobile Heavy Duty Care. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      
+      // Fix for Flexbox fallback on mobile menu open
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      }
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex'); // Keep flex compatibility
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex'); // Keep flex compatibility
+          }
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
+</body>
+</html>

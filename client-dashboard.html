@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - TruckFix Mobile Diesel Repair</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'accent': '#2563EB', /* Royal Blue */
+            'highlight': '#2563EB', /* Royal Blue */
+            'brand-dark': '#0F172A', /* Dark Navy */
+            'brand-light': '#FFFFFF', /* White */
+            'brand-muted': '#64748B' /* Cool Gray */
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .dark ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; }
+    ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+    
+    /* Smooth transition for sidebar */
+    .sidebar-transition {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* RTL Support for Sidebar Toggle */
+    [dir="rtl"] #sidebar.sidebar-closed {
+      transform: translateX(100%);
+    }
+    [dir="ltr"] #sidebar.sidebar-closed {
+      transform: translateX(-100%);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-brand-light dark:bg-brand-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <div class="flex h-screen overflow-hidden">
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden backdrop-blur-sm transition-opacity opacity-0"></div>
+
+    <aside id="sidebar" class="fixed inset-y-0 start-0 z-50 w-64 bg-brand-dark dark:bg-[#111827] border-e border-gray-200 dark:border-white/5 text-brand-light sidebar-closed lg:!translate-x-0 sidebar-transition flex flex-col">
+      
+      <div class="h-[90px] flex items-center justify-center border-b border-gray-800 dark:border-white/5 px-6 shrink-0">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="flex flex-col">
+            <span class="text-2xl font-semibold tracking-tight text-brand-light uppercase">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></span>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      <nav class="flex-1 overflow-y-auto py-8 flex flex-col gap-2 scrollbar-thin">
+        <p class="px-8 text-[10px] font-medium text-brand-muted uppercase tracking-[0.2em] mb-2">Overview</p>
+        
+        <button onclick="showSection('sec-dashboard', this)" class="sidebar-btn w-full flex items-center gap-4 px-8 py-3 bg-white/5 border-s-2 border-accent text-accent transition-all duration-300 group">
+          <i class="fas fa-home w-5 text-center"></i>
+          <span class="text-xs uppercase tracking-widest font-semibold">Dashboard</span>
+        </button>
+
+        <p class="px-8 text-[10px] font-medium text-brand-muted uppercase tracking-[0.2em] mt-8 mb-2">Fleet Management</p>
+
+        <button onclick="showSection('sec-my-fleet', this)" class="sidebar-btn w-full flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-truck-moving w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-medium">My Fleet</span>
+        </button>
+
+        <button onclick="showSection('sec-schedule-repair', this)" class="sidebar-btn w-full flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-tools w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-medium">Schedule Repair</span>
+        </button>
+
+        <button onclick="showSection('sec-service-history', this)" class="sidebar-btn w-full flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-history w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-medium">Service History</span>
+        </button>
+        
+        <p class="px-8 text-[10px] font-medium text-brand-muted uppercase tracking-[0.2em] mt-8 mb-2">Resources</p>
+
+        <button onclick="showSection('sec-diagnostic-guides', this)" class="sidebar-btn w-full flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-book-open w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-medium">Diagnostic Guides</span>
+        </button>
+
+
+        <p class="px-8 text-[10px] font-medium text-brand-muted uppercase tracking-[0.2em] mt-8 mb-2">Account</p>
+
+        <button onclick="showSection('sec-invoices', this)" class="sidebar-btn w-full flex items-center justify-between px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <div class="flex items-center gap-4">
+            <i class="fas fa-file-invoice-dollar w-5 text-center transition-colors"></i>
+            <span class="text-xs uppercase tracking-widest font-medium">Invoices</span>
+          </div>
+          <span class="bg-highlight text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">1 Due</span>
+        </button>
+      </nav>
+
+
+
+      <div class="p-6 border-t border-gray-800 dark:border-white/5 bg-brand-dark dark:bg-[#0d1320]">
+        <div class="flex items-center gap-4 group cursor-pointer">
+          <img src="https://ui-avatars.com/api/?name=Emily+Blunt&background=0F172A&color=2563EB" alt="User" class="w-10 h-10 object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300 border border-gray-700">
+          <div class="overflow-hidden">
+            <p class="text-xs uppercase tracking-wider font-semibold text-brand-light truncate">Emily Blunt</p>
+            <p class="text-[10px] uppercase tracking-widest text-accent truncate">Client #TF-2026</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col lg:ms-64 min-w-0 transition-all duration-300 bg-gray-50 dark:bg-brand-dark">
+      
+      <header class="h-[90px] bg-white dark:bg-[#1E293B] border-b border-gray-200 dark:border-white/5 flex items-center justify-between px-4 md:px-8 z-30 sticky top-0 transition-colors duration-300 shadow-sm">
+        
+        <div class="flex items-center gap-4">
+          <button id="sidebar-toggle" class="lg:hidden p-2 text-gray-900 dark:text-brand-light transition-colors focus:outline-none">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <h2 class="text-sm md:text-base font-semibold tracking-widest uppercase text-brand-dark dark:text-brand-light truncate hidden sm:block">Welcome Back, Emily</h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          
+          <button id="rtl-toggle" class="text-xs font-medium uppercase tracking-widest text-brand-muted hover:text-accent transition-colors duration-300" title="Toggle RTL/LTR">
+            <span id="rtl-text">RTL</span>
+          </button>
+
+          <button id="theme-toggle" class="relative w-[72px] h-[34px] flex items-center bg-gray-200 dark:bg-[#0F172A] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[9px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LIGHT</span>
+            <span class="text-[9px] font-medium text-accent absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DARK</span>
+            
+            <div class="w-[24px] h-[24px] bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-gray-600 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[38px] ltr:dark:translate-x-[38px] dark:translate-x-[38px] z-10">
+              <i class="fas fa-sun text-[11px] text-highlight dark:hidden block"></i>
+              <i class="fas fa-moon text-[11px] text-accent hidden dark:block"></i>
+            </div>
+          </button>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2 hidden sm:block"></div>
+
+          <a href="login.html" class="bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2 rounded-full">
+            <span class="hidden sm:inline">Logout</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+
+        </div>
+      </header>
+
+      
+      
+      <main class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth" id="main-content-area">
+<div id="sec-dashboard" class="dashboard-section block">
+          <!-- Progress -->
+          <div class="bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-white/5 rounded-2xl p-6 md:p-8 mb-8 relative group hover:border-accent transition-colors shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+              <div>
+                <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Active Service Progress</p>
+                <h3 class="text-2xl md:text-3xl font-semibold text-brand-dark dark:text-brand-light uppercase tracking-tight">PM Service - Truck #04</h3>
+              </div>
+              <div class="border border-gray-200 dark:border-white/10 rounded-xl px-6 py-3 text-center bg-gray-50 dark:bg-black/20">
+                <span class="block text-[10px] uppercase tracking-widest text-brand-muted dark:text-gray-400 font-medium mb-1">Completion</span>
+                <span class="block text-2xl font-semibold text-accent">60%</span>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="w-full h-2 rounded-full bg-gray-200 dark:bg-white/10 mb-4 overflow-hidden">
+                <div class="h-full bg-accent transition-all duration-1000" style="width: 60%"></div>
+              </div>
+              <div class="flex justify-between text-[10px] md:text-xs uppercase tracking-widest font-medium text-brand-muted">
+                <span class="text-accent hidden sm:block">Diagnostics</span>
+                <span class="text-accent hidden sm:block">Parts Source</span>
+                <span class="text-brand-dark dark:text-brand-light">Active Repair</span>
+                <span class="hidden sm:block">Testing</span>
+                <span>Sign-Off</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
+              <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
+              <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Total Fleet Spend</p>
+              <h3 class="text-3xl font-semibold text-brand-dark dark:text-brand-light">$1,250</h3>
+              <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
+                <span class="text-brand-muted">YTD Maintenance</span>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
+              <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
+              <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Balance Due</p>
+              <h3 class="text-3xl font-semibold text-brand-dark dark:text-brand-light">$450</h3>
+              <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
+                <span class="text-highlight">Due on Completion</span>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
+              <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
+              <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Inspection Reports</p>
+              <h3 class="text-3xl font-semibold text-brand-dark dark:text-brand-light">2</h3>
+              <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
+                <span class="text-green-500">DOT & Diagnostic Ready</span>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
+              <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
+              <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Next PM Service</p>
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light uppercase mt-2">Truck #07 - Oil & Lube</h3>
+              <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
+                <span class="text-brand-muted">Scheduled: Oct 28th</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-my-fleet" class="dashboard-section hidden">
+          <div class="bg-white dark:bg-[#1E293B] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden mb-8">
+            <div class="p-6 border-b border-gray-100 dark:border-white/5 flex items-center justify-between">
+              <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-dark dark:text-brand-light">My Fleet & Maintenance Tracking</h3>
+              <button class="bg-accent text-white px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-widest hover:bg-highlight transition-colors"><i class="fas fa-plus mr-2"></i>Add Vehicle</button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-start whitespace-nowrap">
+                <thead>
+                  <tr class="bg-gray-50 dark:bg-black/20 text-brand-muted dark:text-gray-400 text-[10px] uppercase tracking-widest border-b border-gray-100 dark:border-white/5">
+                    <th class="px-6 py-4 font-medium text-start">Vehicle ID / VIN</th>
+                    <th class="px-6 py-4 font-medium text-start">Make & Model</th>
+                    <th class="px-6 py-4 font-medium text-start">Current Status</th>
+                    <th class="px-6 py-4 font-medium text-start">Next PM Due</th>
+                    <th class="px-6 py-4 font-medium text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-white/5 text-sm">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5">
+                      <p class="text-brand-dark dark:text-brand-light font-bold text-xs uppercase">Truck #04</p>
+                      <p class="text-brand-muted text-[10px] font-mono mt-1">1FUJA6CV5ELXXXXXX</p>
+                    </td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs font-medium">Freightliner Cascadia 125</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-accent bg-accent/10 px-2 py-1 rounded-full"><i class="fas fa-wrench mr-1"></i> In Service</span>
+                    </td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">Current</td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-xs"><i class="fas fa-ellipsis-v"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5">
+                      <p class="text-brand-dark dark:text-brand-light font-bold text-xs uppercase">Truck #07</p>
+                      <p class="text-brand-muted text-[10px] font-mono mt-1">1FUJA6CV5ELYYYYYY</p>
+                    </td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs font-medium">Peterbilt 579</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Active</span>
+                    </td>
+                    <td class="px-6 py-5 text-brand-dark dark:text-brand-light text-xs tracking-wider font-bold text-highlight">Oct 28, 2026</td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-xs"><i class="fas fa-ellipsis-v"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5">
+                      <p class="text-brand-dark dark:text-brand-light font-bold text-xs uppercase">Trailer #T-22</p>
+                      <p class="text-brand-muted text-[10px] font-mono mt-1">1PTCA12345ZZZZZZZ</p>
+                    </td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs font-medium">Utility 4000D-X</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-full"><i class="fas fa-exclamation-triangle mr-1"></i> Needs Repair</span>
+                    </td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">Nov 15, 2026</td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-xs"><i class="fas fa-ellipsis-v"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-schedule-repair" class="dashboard-section hidden">
+          <div class="bg-white dark:bg-[#1E293B] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6 md:p-8 mb-8 max-w-4xl">
+            <h3 class="text-xl font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light mb-2">Schedule Roadside Repair or PM</h3>
+            <p class="text-xs text-brand-muted mb-8 font-medium">Dispatch a service truck directly to your location or schedule upcoming preventative maintenance.</p>
+            
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-[10px] font-semibold text-brand-dark dark:text-brand-light uppercase tracking-widest mb-2">Select Vehicle *</label>
+                  <select class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-xs text-brand-dark dark:text-brand-light focus:outline-none focus:border-accent transition-colors appearance-none">
+                    <option value="" disabled selected>Choose a vehicle from your fleet...</option>
+                    <option value="truck04">Truck #04 (Freightliner)</option>
+                    <option value="truck07">Truck #07 (Peterbilt)</option>
+                    <option value="trailer22">Trailer #T-22 (Utility)</option>
+                    <option value="other">Other / Not Listed</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-[10px] font-semibold text-brand-dark dark:text-brand-light uppercase tracking-widest mb-2">Service Type *</label>
+                  <select class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-xs text-brand-dark dark:text-brand-light focus:outline-none focus:border-accent transition-colors appearance-none">
+                    <option value="" disabled selected>Select required service...</option>
+                    <option value="emergency">Emergency Roadside Repair</option>
+                    <option value="pm">Preventative Maintenance (PM)</option>
+                    <option value="diagnostic">Computer Diagnostics</option>
+                    <option value="brakes">Air Brake Service</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-semibold text-brand-dark dark:text-brand-light uppercase tracking-widest mb-2">Location / Address (If Roadside) *</label>
+                <div class="relative">
+                  <i class="fas fa-map-marker-alt absolute left-4 top-3.5 text-brand-muted"></i>
+                  <input type="text" placeholder="Highway mile marker, weigh station, or yard address" class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg pl-10 pr-4 py-3 text-xs text-brand-dark dark:text-brand-light focus:outline-none focus:border-accent transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-semibold text-brand-dark dark:text-brand-light uppercase tracking-widest mb-2">Issue Description / Fault Codes</label>
+                <textarea rows="4" placeholder="Describe the problem, symptoms, or any active fault codes..." class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-xs text-brand-dark dark:text-brand-light focus:outline-none focus:border-accent transition-colors"></textarea>
+              </div>
+              
+              <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-white/5">
+                <button type="button" class="bg-accent hover:bg-highlight text-white px-8 py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors w-full md:w-auto text-center shadow-lg shadow-accent/20">Submit Request <i class="fas fa-paper-plane ml-2"></i></button>
+                <span class="text-[10px] text-brand-muted font-medium uppercase tracking-widest hidden md:block">Average dispatch time: 45 Mins</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="sec-service-history" class="dashboard-section hidden">
+          <div class="bg-white dark:bg-[#1E293B] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden mb-8">
+            <div class="p-6 border-b border-gray-100 dark:border-white/5">
+              <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-dark dark:text-brand-light">Service History & Maintenance Logs</h3>
+            </div>
+            <div class="p-6">
+              <div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-4 space-y-8">
+                
+                <div class="relative pl-8">
+                  <div class="absolute -left-[11px] top-1 bg-white dark:bg-[#1E293B] border-4 border-accent w-5 h-5 rounded-full"></div>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-accent mb-1 block">Oct 10, 2026</span>
+                  <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider mb-2">Engine Diagnostics & DEF Repair</h4>
+                  <p class="text-xs text-brand-muted leading-relaxed font-medium">Truck #04 had a derate issue due to DEF pump failure. Scanned with JPRO, replaced DEF pump module, forced DPF regen. Test driven and cleared.</p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-[9px] bg-gray-100 dark:bg-black/30 text-brand-muted px-2 py-1 rounded uppercase tracking-widest font-semibold border border-gray-200 dark:border-gray-700">Mileage: 452,100</span>
+                    <span class="text-[9px] bg-gray-100 dark:bg-black/30 text-brand-muted px-2 py-1 rounded uppercase tracking-widest font-semibold border border-gray-200 dark:border-gray-700">Inv: #INV-042</span>
+                  </div>
+                </div>
+
+                <div class="relative pl-8">
+                  <div class="absolute -left-[11px] top-1 bg-white dark:bg-[#1E293B] border-4 border-gray-300 dark:border-gray-600 w-5 h-5 rounded-full"></div>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-brand-muted mb-1 block">Sep 22, 2026</span>
+                  <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider mb-2">Trailer PM & Air Brakes</h4>
+                  <p class="text-xs text-brand-muted leading-relaxed font-medium">Trailer #T-22 full DOT inspection and PM. Replaced 2 brake chambers, adjusted slack adjusters, replaced 3 clearance lights.</p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-[9px] bg-gray-100 dark:bg-black/30 text-brand-muted px-2 py-1 rounded uppercase tracking-widest font-semibold border border-gray-200 dark:border-gray-700">Inv: #INV-021</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-diagnostic-guides" class="dashboard-section hidden">
+          <h3 class="text-xl font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light mb-6">Diagnostic Cheat Sheets & Guides</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            
+            <div class="bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-white/5 rounded-2xl p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5">
+              <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                <i class="fas fa-file-pdf"></i>
+              </div>
+              <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider mb-2">Cummins ISX Fault Codes</h4>
+              <p class="text-xs text-brand-muted font-medium mb-4 line-clamp-2">A comprehensive quick-reference guide for the most common Cummins ISX aftertreatment and engine fault codes.</p>
+              <button class="text-[10px] font-bold uppercase tracking-widest text-accent flex items-center gap-2 hover:text-highlight transition-colors">Download PDF <i class="fas fa-arrow-down"></i></button>
+            </div>
+
+            <div class="bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-white/5 rounded-2xl p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5">
+              <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                <i class="fas fa-wind"></i>
+              </div>
+              <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider mb-2">Air Brake Troubleshooting</h4>
+              <p class="text-xs text-brand-muted font-medium mb-4 line-clamp-2">Step-by-step diagnostic tree for identifying air leaks, frozen valves, and compressor failures on heavy-duty trailers.</p>
+              <button class="text-[10px] font-bold uppercase tracking-widest text-accent flex items-center gap-2 hover:text-highlight transition-colors">View Guide <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-white/5 rounded-2xl p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5">
+              <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                <i class="fas fa-battery-full"></i>
+              </div>
+              <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider mb-2">Electrical System Testing</h4>
+              <p class="text-xs text-brand-muted font-medium mb-4 line-clamp-2">Learn how to properly use a multimeter to test alternators, starter draw, and parasitic drains on multi-battery systems.</p>
+              <button class="text-[10px] font-bold uppercase tracking-widest text-accent flex items-center gap-2 hover:text-highlight transition-colors">View Guide <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+          </div>
+        </div>
+
+
+<div id="sec-invoices" class="dashboard-section hidden">
+          <!-- Invoices -->
+          <div class="bg-white dark:bg-[#1E293B] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden mb-8">
+            <div class="p-6 border-b border-gray-100 dark:border-white/5 flex items-center justify-between">
+              <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-dark dark:text-brand-light">Recent Invoices</h3>
+              <button class="text-[10px] font-medium uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-brand-light transition-colors">View All</button>
+            </div>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full text-start whitespace-nowrap">
+                <thead>
+                  <tr class="bg-gray-50 dark:bg-black/20 text-brand-muted dark:text-gray-400 text-[10px] uppercase tracking-widest border-b border-gray-100 dark:border-white/5">
+                    <th class="px-6 py-4 font-medium text-start">Invoice ID</th>
+                    <th class="px-6 py-4 font-medium text-start">Description</th>
+                    <th class="px-6 py-4 font-medium text-start">Date</th>
+                    <th class="px-6 py-4 font-medium text-start">Amount</th>
+                    <th class="px-6 py-4 font-medium text-start">Status</th>
+                    <th class="px-6 py-4 font-medium text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-white/5 text-sm">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-brand-dark dark:text-brand-light font-mono text-xs">#INV-042</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs uppercase tracking-wider font-medium">Engine Diagnostics</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">OCT 10, 2026</td>
+                    <td class="px-6 py-5 font-semibold text-brand-dark dark:text-brand-light">$449.50</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">Paid</span>
+                    </td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-semibold flex items-center justify-end w-full gap-1">PDF <i class="fas fa-download"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-brand-dark dark:text-brand-light font-mono text-xs">#INV-055</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs uppercase tracking-wider font-medium">Air Brake Overhaul</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">OCT 22, 2026</td>
+                    <td class="px-6 py-5 font-semibold text-brand-dark dark:text-brand-light">$350.00</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">Paid</span>
+                    </td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-semibold flex items-center justify-end w-full gap-1">PDF <i class="fas fa-download"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-brand-dark dark:text-brand-light font-mono text-xs">#INV-061</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs uppercase tracking-wider font-medium">PM Service - Truck #4</td>
+                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">OCT 26, 2026</td>
+                    <td class="px-6 py-5 font-semibold text-brand-dark dark:text-brand-light">$449.50</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-semibold uppercase tracking-widest text-highlight bg-highlight/10 px-2 py-1 rounded-full">Pending</span>
+                    </td>
+                    <td class="px-6 py-5 text-end">
+                      <button class="text-brand-muted hover:text-accent transition-colors text-[10px] uppercase tracking-widest font-semibold flex items-center justify-end w-full gap-1">Pay <i class="fas fa-arrow-right rtl:rotate-180"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+    </div>
+  </div>
+
+  <script>
+    // --- RTL/LTR Toggle Logic ---
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const rtlText = document.getElementById('rtl-text');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('direction') === 'rtl') {
+      html.setAttribute('dir', 'rtl');
+      rtlText.textContent = 'LTR';
+    } else {
+      html.setAttribute('dir', 'ltr');
+      rtlText.textContent = 'RTL';
+    }
+
+    rtlToggle.addEventListener('click', () => {
+      const currentDir = html.getAttribute('dir');
+      
+      if (currentDir === 'ltr') {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+        rtlText.textContent = 'LTR';
+      } else {
+        html.setAttribute('dir', 'ltr');
+        localStorage.setItem('direction', 'ltr');
+        rtlText.textContent = 'RTL';
+      }
+    });
+
+    // --- Responsive Sidebar Logic ---
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const overlay = document.getElementById('sidebar-overlay');
+    
+    function toggleSidebar() {
+      const isClosed = sidebar.classList.contains('sidebar-closed');
+      
+      if (isClosed) {
+        sidebar.classList.remove('sidebar-closed');
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+      } else {
+        sidebar.classList.add('sidebar-closed');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+      }
+    }
+
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    
+    // --- Section Toggling Logic ---
+    function showSection(sectionId, btnElement) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.dashboard-section');
+      sections.forEach(sec => {
+        sec.classList.remove('block');
+        sec.classList.add('hidden');
+      });
+      
+      // Show target section
+      const target = document.getElementById(sectionId);
+      if(target) {
+        target.classList.remove('hidden');
+        target.classList.add('block');
+      }
+      
+      // Update button active states
+      const buttons = document.querySelectorAll('.sidebar-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-white/5', 'border-accent', 'text-accent');
+        btn.classList.add('border-transparent', 'text-brand-muted');
+      });
+      
+      // Set active button
+      btnElement.classList.add('bg-white/5', 'border-accent', 'text-accent');
+      btnElement.classList.remove('border-transparent', 'text-brand-muted');
+    }
+
+    // --- Dark Mode Logic ---
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        updateCharts(true);
+      } else {
+        localStorage.setItem('theme', 'light');
+        updateCharts(false);
+      }
+    });
+
+    // --- Chart.js Configuration for USER Dashboard ---
+    let serviceChart;
+
+    function initCharts() {
+      const isDark = html.classList.contains('dark');
+      const textColor = isDark ? '#64748B' : '#64748B';
+
+      const ctx = document.getElementById('serviceChart').getContext('2d');
+      serviceChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Engine Repair', 'Preventative Maint.', 'Brake Service', 'Emergency Diagnostics'],
+          datasets: [{
+            data: [600, 300, 200, 150],
+            backgroundColor: [
+              '#2563EB', 
+              '#0F172A', 
+              '#2563EB', 
+              isDark ? '#334155' : '#e2e8f0'
+            ],
+            borderWidth: isDark ? 2 : 0,
+            borderColor: isDark ? '#1E293B' : '#ffffff',
+            hoverOffset: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '80%', 
+          plugins: {
+            legend: { 
+              position: 'bottom', 
+              labels: { 
+                color: textColor, 
+                padding: 20, 
+                usePointStyle: false,
+                boxWidth: 10,
+                font: {size: 10, family: 'sans-serif'}
+              } 
+            },
+            tooltip: {
+              backgroundColor: isDark ? '#0F172A' : '#fff',
+              titleColor: isDark ? '#fff' : '#0F172A',
+              bodyColor: isDark ? '#cbd5e1' : '#475569',
+              borderColor: isDark ? '#334155' : '#e2e8f0',
+              borderWidth: 1,
+              cornerRadius: 8,
+              displayColors: false,
+              callbacks: {
+                label: function(context) {
+                  let label = context.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed !== null) {
+                    label += '$' + context.parsed;
+                  }
+                  return label;
+                }
+              }
+            }
+          }
+        }
+      });
+      
+      if(isDark) {
+          serviceChart.data.datasets[0].backgroundColor = ['#2563EB', '#0F172A', '#2563EB', '#334155'];
+          serviceChart.update();
+      }
+    }
+
+    function updateCharts(isDark) {
+      const textColor = '#64748B';
+      
+      if(serviceChart) {
+        serviceChart.options.plugins.legend.labels.color = textColor;
+        serviceChart.options.plugins.tooltip.backgroundColor = isDark ? '#0F172A' : '#fff';
+        serviceChart.options.plugins.tooltip.titleColor = isDark ? '#fff' : '#0F172A';
+        serviceChart.options.plugins.tooltip.bodyColor = isDark ? '#cbd5e1' : '#475569';
+        serviceChart.options.plugins.tooltip.borderColor = isDark ? '#334155' : '#e2e8f0';
+        
+        serviceChart.data.datasets[0].backgroundColor = isDark 
+          ? ['#2563EB', '#0F172A', '#2563EB', '#334155'] 
+          : ['#2563EB', '#0F172A', '#2563EB', '#e2e8f0'];
+          
+        serviceChart.data.datasets[0].borderWidth = isDark ? 2 : 0;
+        serviceChart.data.datasets[0].borderColor = isDark ? '#1E293B' : '#ffffff';
+        serviceChart.update();
+      }
+    }
+
+    window.addEventListener('load', initCharts);
+    
+    window.addEventListener('resize', () => {
+       if (window.innerWidth >= 1024) {
+         sidebar.classList.remove('sidebar-closed');
+         overlay.classList.add('hidden', 'opacity-0');
+       }
+    });
+
+  </script>
+</body>
+</html>

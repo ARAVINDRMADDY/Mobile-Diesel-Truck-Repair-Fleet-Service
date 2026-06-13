@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve - TruckFix Mobile Diesel Repair</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="TruckFix provides specialized mobile diesel repair and fleet maintenance across various industries, including logistics, construction, agriculture, and municipal fleets.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'accent': '#2563EB', /* Royal Blue */
+            'highlight': '#2563EB', /* Royal Blue */
+            'brand-dark': '#0F172A', /* Dark Navy */
+            'brand-light': '#FFFFFF', /* White */
+            'brand-muted': '#64748B' /* Cool Gray */
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen">
+
+  <nav class="bg-brand-light dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-[90px]">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-semibold tracking-tight text-brand-dark dark:text-brand-light uppercase">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center gap-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] start-0 w-56 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              About
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Services
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="industries.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-accent transition-colors py-2">
+              Industries
+              <span class="absolute bottom-0 start-0 w-full h-[2px] bg-accent transition-all duration-300"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Blog
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Contact
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] end-0 w-64 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+                  </a>
+                  <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user w-6 me-2"></i> User Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center gap-4">
+          
+          <button type="button" onclick="window.location.href='login.html'" class="bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2"></div>
+
+          <button id="theme-toggle" class="relative w-[72px] h-[34px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[9px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LIGHT</span>
+            <span class="text-[9px] font-medium text-accent absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DARK</span>
+            
+            <div class="w-[24px] h-[24px] bg-white dark:bg-brand-dark border border-gray-200 dark:border-gray-600 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[38px] ltr:dark:translate-x-[38px] dark:translate-x-[38px] z-10">
+              <i class="fas fa-sun text-[11px] text-highlight dark:hidden block"></i>
+              <i class="fas fa-moon text-[11px] text-accent hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <button id="rtl-toggle" class="text-xs font-medium text-gray-400 hover:text-accent transition-colors duration-300 ms-2" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-brand-light hover:text-accent focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-brand-light dark:bg-[#1E293B] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-accent/20 ms-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Services</a>
+        <a href="industries.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Industries</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 flex flex-col gap-4 ps-4 border-s-2 border-accent/20 ms-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+            </a>
+            <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6 me-2"></i> User Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col gap-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-4 py-3.5 font-semibold uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-4 py-3.5 font-medium uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+          
+          <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-100 dark:border-white/5 mt-4">
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <span class="dark:hidden flex items-center text-highlight"><i class="fas fa-sun me-2"></i> Light Active</span>
+              <span class="hidden dark:flex items-center text-accent"><i class="fas fa-moon me-2"></i> Dark Active</span>
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-accent transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <i class="fas fa-language me-2 text-lg"></i> RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow flex flex-col pt-[90px]">
+    
+    <section class="py-16 lg:py-24 bg-brand-dark text-brand-light relative overflow-hidden">
+      <div class="absolute top-0 end-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 start-0 w-80 h-80 bg-highlight/10 rounded-full blur-3xl"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+          Industries We <span class="text-accent">Serve</span>
+        </h1>
+        <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto font-medium">
+          We understand that every sector has unique heavy-duty requirements. TruckFix provides customized mobile diesel repair and maintenance strategies tailored to your industry.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- SECTION 1: Aviation Ground Support (70+ lines) -->
+    <section class="py-24 bg-white dark:bg-[#0B1120] relative border-b border-gray-100 dark:border-white/5 overflow-hidden">
+      <div class="absolute -right-40 top-20 w-96 h-96 bg-accent rounded-full blur-[120px] opacity-20"></div>
+      <div class="absolute -left-20 bottom-10 w-72 h-72 bg-highlight rounded-full blur-[100px] opacity-10"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
+          
+          <div class="lg:w-1/2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 text-accent rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-accent/20">
+              <i class="fas fa-plane"></i> Tarmac Ready
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">AVIATION GROUND <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">SUPPORT EQUIPMENT</span></h2>
+            <p class="text-brand-muted dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              When an aircraft is on the tarmac, ground support equipment (GSE) must perform flawlessly. We specialize in maintaining and repairing the diesel engines that power tugs, belt loaders, and ground power units (GPUs) right at the gate.
+            </p>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-4">
+                <div class="mt-1 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <i class="fas fa-check text-xs text-accent"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark dark:text-white text-sm">Security Cleared Personnel</h4>
+                  <p class="text-brand-muted dark:text-gray-400 text-xs mt-1">Our mechanics hold necessary badges for AOA access.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="mt-1 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <i class="fas fa-check text-xs text-accent"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark dark:text-white text-sm">Zero FOD Commitment</h4>
+                  <p class="text-brand-muted dark:text-gray-400 text-xs mt-1">Strict adherence to Foreign Object Debris protocols during repairs.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="mt-1 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <i class="fas fa-check text-xs text-accent"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark dark:text-white text-sm">24/7 Gate Dispatch</h4>
+                  <p class="text-brand-muted dark:text-gray-400 text-xs mt-1">Immediate response to prevent aircraft turnaround delays.</p>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-50 dark:bg-[#1E293B] p-5 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-all duration-300 group hover:-translate-y-1 cursor-pointer">
+                <i class="fas fa-plane-departure text-2xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+                <h4 class="font-bold text-brand-dark dark:text-brand-light text-sm mb-1">Aircraft Tugs</h4>
+                <p class="text-[11px] text-brand-muted dark:text-gray-500">Heavy pushback recovery.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-[#1E293B] p-5 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-all duration-300 group hover:-translate-y-1 cursor-pointer">
+                <i class="fas fa-bolt text-2xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+                <h4 class="font-bold text-brand-dark dark:text-brand-light text-sm mb-1">GPU Units</h4>
+                <p class="text-[11px] text-brand-muted dark:text-gray-500">Power generation systems.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:w-1/2 relative group">
+            <div class="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative transform transition-transform duration-700">
+              <img src="images/truck_fleet.png" alt="Aviation Ground Support" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/40 to-transparent mix-blend-multiply"></div>
+              
+              <!-- Floating UI Card -->
+              <div class="absolute bottom-8 left-8 right-8 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="backdrop-blur-xl bg-white/10 dark:bg-black/40 border border-white/20 p-6 rounded-2xl flex items-center justify-between shadow-2xl">
+                  <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-highlight flex items-center justify-center text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                      <i class="fas fa-stopwatch text-2xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-white font-bold text-lg mb-0.5">Rapid Gate Response</h3>
+                      <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <p class="text-gray-300 text-xs font-medium uppercase tracking-wider">Active Tarmac Units: 4</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="w-10 h-10 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-brand-dark transition-colors">
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Overlay stats -->
+              <div class="absolute top-6 right-6 backdrop-blur-md bg-brand-dark/60 border border-white/10 px-4 py-2 rounded-full flex items-center gap-2">
+                <i class="fas fa-shield-alt text-accent"></i>
+                <span class="text-white text-xs font-bold tracking-widest uppercase">TSA Approved</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Marine & Port Operations (70+ lines) -->
+    <section class="py-24 bg-gray-50 dark:bg-[#111827] relative border-b border-gray-200 dark:border-white/5 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNGg0djJoMnYtNGg0di0yaC00em0wLTMwVjBoLTh2NGgtNHYyaDR2NGgyVjRoNHptLTE4IDB2NGgtNHYyaDR2NGgydi00aDRWNGgtNHYtNGgtMnoiIGZpbGw9IiMzYjgyZjYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-50 dark:opacity-20"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+          
+          <div class="lg:w-1/2 order-2 lg:order-1 relative group">
+            <div class="aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl relative">
+              <img src="images/fleet_yard.png" alt="Port Operations" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent"></div>
+              
+              <div class="absolute inset-x-8 bottom-8">
+                <div class="space-y-4">
+                  <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 flex items-center gap-4 transform transition duration-500 hover:translate-x-2">
+                    <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center shrink-0">
+                      <i class="fas fa-ship text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">Terminal Tractors</h4>
+                      <p class="text-gray-300 text-xs">Yard truck fleet maintenance.</p>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 flex items-center gap-4 transform transition duration-500 hover:translate-x-2 delay-150">
+                    <div class="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center shrink-0">
+                      <i class="fas fa-anchor text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">Marine Generators</h4>
+                      <p class="text-gray-300 text-xs">Dockside auxiliary power.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decor element -->
+            <div class="absolute -top-6 -left-6 w-32 h-32 border-4 border-accent/20 rounded-full border-dashed animate-spin-slow"></div>
+          </div>
+          
+          <div class="lg:w-1/2 order-1 lg:order-2">
+            <span class="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block flex items-center gap-2">
+              <i class="fas fa-water"></i> Maritime Sector
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">MARINE & PORT <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">OPERATIONS</span></h2>
+            <p class="text-brand-muted dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              Coastal ports operate in a highly corrosive, high-tempo environment. We deliver targeted diesel repair services for drayage trucks, terminal tractors, and heavy port equipment to keep global supply chains moving without interruption.
+            </p>
+            
+            <div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-gray-800 shadow-xl mb-8 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-accent/10 to-transparent rounded-bl-full"></div>
+              <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-4 relative z-10">Drayage Fleet Support</h3>
+              <p class="text-brand-muted dark:text-gray-400 text-sm leading-relaxed mb-6 relative z-10">
+                Independent owner-operators and large drayage fleets rely on our fast turnaround to maximize their port turns per day. We fix chassis issues, air lines, and engine faults directly at the container yard.
+              </p>
+              <div class="grid grid-cols-2 gap-4 relative z-10">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-check-circle text-accent"></i>
+                  <span class="text-xs font-bold text-brand-dark dark:text-gray-300 uppercase tracking-wide">TWIC Certified Techs</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-check-circle text-accent"></i>
+                  <span class="text-xs font-bold text-brand-dark dark:text-gray-300 uppercase tracking-wide">Chassis Repair</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-check-circle text-accent"></i>
+                  <span class="text-xs font-bold text-brand-dark dark:text-gray-300 uppercase tracking-wide">Def System Fixes</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-check-circle text-accent"></i>
+                  <span class="text-xs font-bold text-brand-dark dark:text-gray-300 uppercase tracking-wide">Yard Hostlers</span>
+                </div>
+              </div>
+            </div>
+            
+            <a href="contact.html" class="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:text-highlight transition-colors">
+              Schedule Port Visit 
+              <span class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all">
+                <i class="fas fa-chevron-right text-[10px]"></i>
+              </span>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Oil & Gas Operations (70+ lines) -->
+    <section class="py-24 bg-brand-dark relative overflow-hidden">
+      <!-- Background Texture -->
+      <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+      <!-- Glow effect -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <div class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+            <i class="fas fa-fire-flame-curved"></i> Energy Sector
+          </div>
+          <h2 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight uppercase">Oil & Gas <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">Operations</span></h2>
+          <p class="text-gray-400 text-lg leading-relaxed font-medium">
+            Frac fleets, drilling rigs, and pipeline construction crews push diesel engines to their absolute limits. We deploy heavy-duty field mechanics to the most remote well pads to prevent catastrophic downtime.
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-2 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+            <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center text-accent text-3xl mb-6 shadow-lg">
+              <i class="fas fa-oil-well"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Well Service Fleets</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Coil tubing units, wireline trucks, and pump jacks require specialized diagnostic equipment. We service twin-engine setups and massive Allison transmissions in the field.
+            </p>
+            <ul class="space-y-3 mt-auto">
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Frac Pump Engines
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Nitrogen Pump Trucks
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Power Swivels
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-2 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+            <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center text-accent text-3xl mb-6 shadow-lg">
+              <i class="fas fa-truck-monster"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Heavy Haul & Rig Moves</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              When it's time to move the rig, trucks cannot break down. We perform pre-move inspections and trail rig convoys to provide immediate roadside repair for bed trucks and gin poles.
+            </p>
+            <ul class="space-y-3 mt-auto">
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Winch Truck Repair
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Heavy Suspension
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Drivetrain Overhauls
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-2 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+            <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center text-accent text-3xl mb-6 shadow-lg">
+              <i class="fas fa-hard-hat"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Pipeline Construction</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Sidebooms, dozers, and trenchers operating in extreme dust and mud. We handle complete undercarriage work, hydraulic pump rebuilding, and field welding.
+            </p>
+            <ul class="space-y-3 mt-auto">
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Track & Undercarriage
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Hydraulic Cylinders
+              </li>
+              <li class="flex items-start gap-3 text-sm font-medium text-gray-300">
+                <i class="fas fa-arrow-right text-accent mt-1 text-xs"></i> Generator Set Service
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Emergency & Rescue Vehicles (50+ lines) -->
+    <section class="py-24 bg-white dark:bg-[#0B1120] relative border-b border-gray-100 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-gradient-to-br from-accent to-highlight rounded-[2rem] p-1 shadow-2xl relative overflow-hidden">
+          <!-- Inner wrapper for border effect -->
+          <div class="bg-brand-light dark:bg-brand-dark rounded-[1.8rem] p-8 md:p-12 lg:p-16 relative z-10 overflow-hidden h-full">
+            
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              
+              <div class="lg:w-1/2">
+                <div class="w-16 h-16 bg-accent/10 dark:bg-accent/20 rounded-2xl flex items-center justify-center text-accent mb-6 shadow-sm">
+                  <i class="fas fa-ambulance text-3xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-brand-dark dark:text-white mb-6 uppercase tracking-tight">Emergency <br/>Response Fleets</h2>
+                <p class="text-brand-muted dark:text-gray-400 text-lg leading-relaxed mb-8">
+                  Ambulances, fire apparatus, and rescue vehicles must start every single time. Lives depend on it. We offer priority zero-downtime maintenance programs specifically designed for EMS and fire departments.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 bg-accent hover:bg-highlight text-white text-xs font-bold uppercase tracking-widest rounded transition-colors shadow-lg shadow-accent/30">
+                    <i class="fas fa-phone-alt mr-2"></i> Priority Dispatch
+                  </a>
+                </div>
+              </div>
+              
+              <div class="lg:w-1/2 w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 rounded-2xl">
+                    <i class="fas fa-heartbeat text-accent text-2xl mb-3"></i>
+                    <h4 class="text-brand-dark dark:text-white font-bold mb-2">Ambulance Chassis</h4>
+                    <p class="text-sm text-brand-muted dark:text-gray-400">Electrical systems, dual alternators, and air ride suspensions.</p>
+                  </div>
+                  <div class="bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 rounded-2xl">
+                    <i class="fas fa-fire-extinguisher text-accent text-2xl mb-3"></i>
+                    <h4 class="text-brand-dark dark:text-white font-bold mb-2">Fire Apparatus</h4>
+                    <p class="text-sm text-brand-muted dark:text-gray-400">Water pump PTOs, aerial hydraulics, and heavy chassis brakes.</p>
+                  </div>
+                  <div class="bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 rounded-2xl">
+                    <i class="fas fa-shield-alt text-accent text-2xl mb-3"></i>
+                    <h4 class="text-brand-dark dark:text-white font-bold mb-2">EVT Certified</h4>
+                    <p class="text-sm text-brand-muted dark:text-gray-400">Technicians certified in Emergency Vehicle Technician standards.</p>
+                  </div>
+                  <div class="bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 rounded-2xl">
+                    <i class="fas fa-clipboard-list text-accent text-2xl mb-3"></i>
+                    <h4 class="text-brand-dark dark:text-white font-bold mb-2">NFPA Compliance</h4>
+                    <p class="text-sm text-brand-muted dark:text-gray-400">Strict adherence to preventative maintenance guidelines.</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- SECTION 5: Forestry & Logging (50+ lines) -->
+    <section class="py-24 bg-gray-50 dark:bg-[#111827] relative border-b border-gray-200 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col items-center justify-center mb-16 gap-6 text-center">
+          <div class="max-w-2xl">
+            <span class="text-accent dark:text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 flex items-center justify-center gap-2">
+              <i class="fas fa-tree"></i> Timber Industry
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black text-brand-dark dark:text-brand-light tracking-tight uppercase">Forestry & <br/>Logging Fleets</h2>
+          </div>
+          <p class="text-brand-muted dark:text-gray-400 font-medium max-w-2xl text-sm leading-relaxed">
+            Deep in the woods, far from cell service and paved roads, logging equipment takes a brutal beating. We provide fully autonomous field service trucks to keep your harvest moving.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
+            <img src="images/diesel_repair_highway.png" alt="Logging Truck" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white mb-4 shadow-lg">
+                <i class="fas fa-truck-moving"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Log Trucks</h3>
+              <p class="text-gray-300 text-sm">Heavy-duty suspension, air scales, and extreme duty drivetrain maintenance.</p>
+            </div>
+          </div>
+          
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
+            <img src="images/fleet_yard.png" alt="Feller Buncher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white mb-4 shadow-lg">
+                <i class="fas fa-tractor"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Feller Bunchers</h3>
+              <p class="text-gray-300 text-sm">Complex hydraulic systems, saw head repairs, and cooling system blowouts.</p>
+            </div>
+          </div>
+          
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
+            <img src="images/diagnostic_tablet.png" alt="Skidder" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white mb-4 shadow-lg">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Skidders & Loaders</h3>
+              <p class="text-gray-300 text-sm">Grapple cylinder repacking, articulation joint service, and winch repair.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-dark text-brand-light pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-semibold tracking-tight uppercase mb-6 text-brand-light">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></h3>
+          <p class="text-brand-muted mb-8 font-medium leading-relaxed text-base">
+            Providing elite on-site diesel truck repair and preventative fleet management to minimize your operational downtime. We come to you.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-twitter text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-youtube text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Home</a></li>
+            <li><a href="about.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">About Us</a></li>
+            <li><a href="industries.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Industries</a></li>
+            <li><a href="blog.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Fleet Care Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Our Services</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Emergency Roadside Repair</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Diesel Engine Diagnostics</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Brake & Suspension Service</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Preventative Maintenance (PM)</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">DOT Inspections & Electrical</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Contact Us</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-highlight mt-1 me-4 text-base"></i>
+              <span class="text-base text-brand-muted font-medium">Serving Salem, Tamil Nadu, India & Surrounding Fleet Routes</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-highlight me-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-highlight me-4 text-base"></i>
+              <a href="mailto:info@truckfix.com" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">info@truckfix.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-brand-muted text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 TruckFix Mobile Heavy Duty Care. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      
+      // Fix for Flexbox fallback on mobile menu open
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      }
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex'); // Keep flex compatibility
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex'); // Keep flex compatibility
+          }
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
+</body>
+</html>

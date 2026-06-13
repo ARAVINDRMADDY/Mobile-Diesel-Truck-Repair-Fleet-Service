@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - TruckFix Mobile Diesel Truck Repair & Fleet Service</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="Learn more about TruckFix, our heritage, and our passion for keeping commercial fleets and heavy-duty diesel trucks moving with elite mobile repair.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'accent': '#2563EB', /* Royal Blue */
+            'highlight': '#2563EB', /* Royal Blue */
+            'brand-dark': '#0F172A', /* Dark Navy */
+            'brand-light': '#FFFFFF', /* White */
+            'brand-muted': '#64748B' /* Cool Gray */
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen">
+
+  <nav class="bg-brand-light dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-[90px]">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-semibold tracking-tight text-brand-dark dark:text-brand-light uppercase">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center gap-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] start-0 w-56 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-accent transition-colors py-2">
+              About
+              <span class="absolute bottom-0 start-0 w-full h-[2px] bg-accent transition-all duration-300"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Services
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="industries.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Industries
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Blog
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2">
+              Contact
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] end-0 w-64 bg-brand-light dark:bg-[#1E293B] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+                  </a>
+                  <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+                    <i class="fas fa-user w-6 me-2"></i> User Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center gap-4">
+          
+          <button type="button" onclick="window.location.href='login.html'" class="bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2"></div>
+
+          <button id="theme-toggle" class="relative w-[72px] h-[34px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[9px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LIGHT</span>
+            <span class="text-[9px] font-medium text-accent absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DARK</span>
+            
+            <div class="w-[24px] h-[24px] bg-white dark:bg-brand-dark border border-gray-200 dark:border-gray-600 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[38px] ltr:dark:translate-x-[38px] dark:translate-x-[38px] z-10">
+              <i class="fas fa-sun text-[11px] text-highlight dark:hidden block"></i>
+              <i class="fas fa-moon text-[11px] text-accent hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <button id="rtl-toggle" class="text-xs font-medium text-gray-400 hover:text-accent transition-colors duration-300 ms-2" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-brand-light hover:text-accent focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-brand-light dark:bg-[#1E293B] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-accent/20 ms-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Services</a>
+        <a href="industries.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Industries</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 flex flex-col gap-4 ps-4 border-s-2 border-accent/20 ms-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+            </a>
+            <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6 me-2"></i> User Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col gap-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-4 py-3.5 font-semibold uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-4 py-3.5 font-medium uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+          
+          <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-100 dark:border-white/5 mt-4">
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <span class="dark:hidden flex items-center text-highlight"><i class="fas fa-sun me-2"></i> Light Active</span>
+              <span class="hidden dark:flex items-center text-accent"><i class="fas fa-moon me-2"></i> Dark Active</span>
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-accent transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <i class="fas fa-language me-2 text-lg"></i> RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow flex flex-col pt-[90px]">
+    
+    <section class="py-16 lg:py-24 bg-brand-dark text-brand-light relative overflow-hidden">
+      <div class="absolute top-0 end-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 start-0 w-80 h-80 bg-brand-muted/10 rounded-full blur-3xl"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+          About <span class="text-accent">TruckFix</span>
+        </h1>
+        <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto font-medium">
+          Discover the drive, technicians, and expertise behind our premium mobile diesel repair and fleet maintenance service. We keep commercial assets running flawlessly.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-[#111827] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="relative animate-fade-in">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-light dark:border-brand-dark z-10">
+              <img src="images/truck_fleet.png" alt="TruckFix diesel truck mechanic" class="w-full h-[500px] object-cover">
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-6 animate-fade-in">
+            <span class="text-accent font-semibold tracking-wider uppercase text-sm">Our Story</span>
+            <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark dark:text-brand-light leading-tight">
+              How The Repairs <span class="text-accent">Started</span>.
+            </h2>
+            
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
+              Founded over a decade ago, TruckFix was born from a simple realization: standard repair shops and unexpected breakdown delays were costing fleet owners thousands in lost revenue and delivery penalties.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
+              What started as a single mobile emergency truck has grown into the area's premier heavy-duty fleet asset management and mobile mechanical crew. We bridge the gap between heavy shop capabilities and the unmatched convenience of coming straight to your truck yard or breakdown point.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
+              Today, we have serviced thousands of medium and heavy-duty vehicles, empowering transport managers to operate smoothly while lowering their total cost of ownership.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-brand-light dark:bg-brand-dark transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-accent font-semibold tracking-wider uppercase text-sm">Our Purpose</span>
+          <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark dark:text-brand-light mt-2">Mission & Vision</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition duration-300">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-3xl mb-6">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-brand-dark dark:text-brand-light mb-4">Our Mission</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
+              To keep commercial operations moving efficiently by delivering top-tier mobile diesel mechanics and preventative maintenance solutions directly to clients. We focus on transparent diagnostics and cutting downtime using premium heavy-duty commercial truck parts.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition duration-300">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-3xl mb-6">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-brand-dark dark:text-brand-light mb-4">Our Vision</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-medium">
+              To build the nation's most responsive and trusted mobile diesel mechanical network, fundamentally transforming logistics infrastructure through fast, on-site fleet preservation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-brand-muted/5 dark:bg-[#111827] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-accent font-semibold tracking-wider uppercase text-sm">The Experts</span>
+          <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark dark:text-brand-light mt-2 mb-4">Meet Our Mechanics</h2>
+          <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">The master technicians dedicated to diagnosing, repairing, and optimizing your heavy-duty assets.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-brand-light dark:bg-brand-dark rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 group">
+            <div class="overflow-hidden h-80 relative">
+              <img src="images/mechanic_portrait.png" alt="Alex Mercer" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-1">Alex Mercer</h3>
+              <p class="text-accent text-sm font-medium mb-3">Founder & Chief Diesel Tech</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">Over 15 years certified in heavy equipment maintenance, specializing in engine diagnostics and complex powertrain systems.</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-light dark:bg-brand-dark rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 group">
+            <div class="overflow-hidden h-80 relative">
+              <img src="images/diagnostic_tablet.png" alt="David Chen" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-1">David Chen</h3>
+              <p class="text-accent text-sm font-medium mb-3">Mobile Diagnostic Specialist</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">Expert in computer module systems, sensor configurations, custom fuel systems, and commercial electrical mapping.</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-light dark:bg-brand-dark rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 group">
+            <div class="overflow-hidden h-80 relative">
+              <img src="images/diesel_repair_highway.png" alt="Sarah Rodriguez" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-dark hover:bg-accent hover:text-white transition"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-1">Sarah Rodriguez</h3>
+              <p class="text-accent text-sm font-medium mb-3">Brake & Suspension Tech</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">Specialized expert in commercial vehicle air-brake configurations, hydraulic overhauls, and structural alignment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-brand-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <span class="text-accent font-semibold tracking-wider uppercase text-sm">Our Values</span>
+          <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark dark:text-brand-light mt-2 mb-4">Why Choose Us</h2>
+          <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">We look past superficial fixes. Here are the core metrics driving our elite maintenance processes and long-term partnerships.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="bg-brand-light dark:bg-[#1a1a1a] p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div class="w-14 h-14 bg-white dark:bg-brand-dark rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-accent transition-colors duration-300">
+              <i class="fas fa-screwdriver-wrench text-accent group-hover:text-white text-2xl transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-3">Tailored Solutions</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+              We carefully monitor the specific wear parameters across your entire commercial fleet, optimizing custom preventive programs safely.
+            </p>
+          </div>
+
+          <div class="bg-brand-light dark:bg-[#1a1a1a] p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div class="w-14 h-14 bg-white dark:bg-brand-dark rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-accent transition-colors duration-300">
+              <i class="fas fa-gauge-high text-accent group-hover:text-white text-2xl transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-3">Rapid Dispatch</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+              We understand that downtime kills margins. Our response structure ensures service vehicles leave containing full toolkits promptly.
+            </p>
+          </div>
+
+          <div class="bg-brand-light dark:bg-[#1a1a1a] p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div class="w-14 h-14 bg-white dark:bg-brand-dark rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-accent transition-colors duration-300">
+              <i class="fas fa-circle-check text-accent group-hover:text-white text-2xl transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light mb-3">Compliance & Safety</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+              Roadside security matters. We ensure rigorous testing criteria map closely alongside regulatory and safety guidelines.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-16 bg-accent text-white relative overflow-hidden">
+      <div class="absolute top-0 end-0 w-64 h-64 bg-brand-light/20 rounded-full blur-3xl -me-20 -mt-20"></div>
+      <div class="absolute bottom-0 start-0 w-64 h-64 bg-brand-dark/10 rounded-full blur-3xl -ms-20 -mb-20"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x rtl:divide-x-reverse divide-white/20">
+          
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-semibold mb-2">10+</div>
+            <div class="text-sm md:text-base font-medium tracking-wider uppercase text-white/90">Years Experience</div>
+          </div>
+          
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-semibold mb-2">5000+</div>
+            <div class="text-sm md:text-base font-medium tracking-wider uppercase text-white/90">Trucks Repaired</div>
+          </div>
+          
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-semibold mb-2">25+</div>
+            <div class="text-sm md:text-base font-medium tracking-wider uppercase text-white/90">Certified Mechanics</div>
+          </div>
+          
+          <div class="p-4 border-r-0">
+            <div class="text-4xl md:text-5xl font-semibold mb-2">99%</div>
+            <div class="text-sm md:text-base font-medium tracking-wider uppercase text-white/90">Fleet Uptime Rate</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-[#1a1a1a] transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+        <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark dark:text-brand-light mb-6">Ready to Maximize Fleet Performance?</h2>
+        <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 font-medium">
+          Join hundreds of commercial operators who protect their active schedules with our customized repair packages.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="register.html" class="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-blue-700 text-white rounded-full font-semibold uppercase tracking-widest text-xs transition-all duration-300 shadow-lg hover:shadow-accent/50 transform hover:-translate-y-1 gap-2">
+            <span>Schedule Asset Service</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+          <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-brand-light dark:bg-brand-dark text-brand-dark dark:text-brand-light border border-gray-200 dark:border-gray-700 rounded-full font-medium uppercase tracking-widest text-xs transition-all duration-300 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:-translate-y-1">
+            Fleet Solutions
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-dark text-brand-light pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-semibold tracking-tight uppercase mb-6 text-brand-light">Truck<span class="text-accent">Fix<span class="text-highlight">.</span></span></h3>
+          <p class="text-brand-muted mb-8 font-medium leading-relaxed text-base">
+            Providing elite on-site diesel truck repair and preventative fleet management to minimize your operational downtime. We come to you.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-twitter text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-youtube text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Home</a></li>
+            <li><a href="about.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">About Us</a></li>
+            <li><a href="industries.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Industries</a></li>
+            <li><a href="blog.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Fleet Care Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Our Services</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Emergency Roadside Repair</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Diesel Engine Diagnostics</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Brake & Suspension Service</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Preventative Maintenance (PM)</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">DOT Inspections & Electrical</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Contact Us</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-highlight mt-1 me-4 text-base"></i>
+              <span class="text-base text-brand-muted font-medium">Serving Salem, Tamil Nadu, India & Surrounding Fleet Routes</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-highlight me-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-highlight me-4 text-base"></i>
+              <a href="mailto:info@truckfix.com" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">info@truckfix.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-brand-muted text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 TruckFix Mobile Heavy Duty Care. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      
+      // Fix for Flexbox fallback on mobile menu open
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      }
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex'); // Keep flex compatibility
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex'); // Keep flex compatibility
+          }
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
+</body>
+</html>
