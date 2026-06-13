@@ -42,7 +42,7 @@
     .animate-float { animation: float 3s ease-in-out infinite; }
   </style>
 </head>
-<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen">
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen overflow-x-hidden">
 
   <nav class="bg-brand-light dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -321,54 +321,54 @@
           <p class="text-brand-muted dark:text-gray-400 text-lg max-w-2xl mx-auto">Modern trucks are rolling computers. We bring dealer-level software directly to your yard, avoiding expensive tow bills to the dealership.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           <!-- Card 1 -->
-          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
             <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
               <i class="fas fa-laptop-code"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Code Clearing</h3>
             <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">We don't just clear check engine lights; we read the active and inactive fault codes to tell you exactly what triggered the light and whether it's safe to continue driving or requires immediate repair.</p>
-            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider flex flex-col items-center">
               <li><i class="fas fa-check text-accent mr-2"></i> Cummins INSITE</li>
               <li><i class="fas fa-check text-accent mr-2"></i> Detroit Diagnostic Link</li>
             </ul>
           </div>
           
           <!-- Card 2 -->
-          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
             <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
               <i class="fas fa-wind"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Forced Regens</h3>
             <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">DPF clogged and putting your truck in derate mode? We can perform mobile forced regenerations to burn off soot buildup, clear the derate, and restore full engine power on the highway.</p>
-            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider flex flex-col items-center">
               <li><i class="fas fa-check text-accent mr-2"></i> DPF Soot Level Reset</li>
               <li><i class="fas fa-check text-accent mr-2"></i> SCR System Checks</li>
             </ul>
           </div>
           
           <!-- Card 3 -->
-          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
             <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
               <i class="fas fa-tachometer-alt"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Parameter Changes</h3>
             <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">Need your fleet's top speed adjusted? We can modify ECM parameters including road speed limits, cruise control limits, idle shutdown timers, and PTO configurations.</p>
-            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider flex flex-col items-center">
               <li><i class="fas fa-check text-accent mr-2"></i> Speed Limiter Adjust</li>
               <li><i class="fas fa-check text-accent mr-2"></i> Idle Timer Setup</li>
             </ul>
           </div>
           
           <!-- Card 4 -->
-          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <div class="bg-white dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
             <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
               <i class="fas fa-microchip"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-brand-light mb-3">Module Programming</h3>
             <p class="text-sm text-brand-muted dark:text-gray-400 mb-6 line-clamp-4">Replacing a faulty control module usually means a tow to the dealer. Our techs can flash and program new ECMs, ACMs, and TCMs right in your yard.</p>
-            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider">
+            <ul class="text-xs font-bold text-brand-dark dark:text-gray-300 space-y-2 uppercase tracking-wider flex flex-col items-center">
               <li><i class="fas fa-check text-accent mr-2"></i> ECM Flashing</li>
               <li><i class="fas fa-check text-accent mr-2"></i> Injector Coding</li>
             </ul>
