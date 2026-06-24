@@ -231,9 +231,13 @@
 
   <main class="flex-grow flex flex-col pt-[90px] w-full overflow-x-hidden relative">
     
-    <section class="py-16 lg:py-24 bg-brand-dark text-brand-light relative overflow-hidden w-full">
-      <div class="absolute top-0 end-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 start-0 w-80 h-80 bg-highlight/10 rounded-full blur-3xl"></div>
+    <section class="py-24 lg:py-32 bg-brand-dark text-brand-light relative overflow-hidden w-full">
+      <div class="absolute inset-0 z-0">
+        <img src="images/services_hero.png" alt="Services Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+      </div>
+      <div class="absolute top-0 end-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl z-0"></div>
+      <div class="absolute bottom-0 start-0 w-80 h-80 bg-highlight/20 rounded-full blur-3xl z-0"></div>
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in w-full">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
@@ -320,10 +324,18 @@
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-[#111827] relative border-y border-gray-200 dark:border-white/5 w-full overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        <div class="text-center mb-12 md:mb-16">
-          <span class="text-accent font-semibold tracking-widest uppercase text-xs mb-3 block">OEM Level Tech</span>
-          <h2 class="text-3xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">ADVANCED <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">DIAGNOSTICS</span></h2>
-          <p class="text-brand-muted dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">Modern trucks are rolling computers. We bring dealer-level software directly to your yard, avoiding expensive tow bills to the dealership.</p>
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="text-left">
+            <span class="text-accent font-semibold tracking-widest uppercase text-xs mb-3 block">OEM Level Tech</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-brand-dark dark:text-brand-light mb-6 tracking-tight">ADVANCED <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">DIAGNOSTICS</span></h2>
+            <p class="text-brand-muted dark:text-gray-400 text-base sm:text-lg mb-8">Modern trucks are rolling computers. We bring dealer-level software directly to your yard, avoiding expensive tow bills to the dealership.</p>
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-bold uppercase tracking-widest text-xs hover:bg-highlight transition-colors rounded shadow-lg">
+              Schedule Diagnostics
+            </a>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-[#1E293B] h-[300px] md:h-[400px]">
+            <img src="images/diagnostic_scanner_2.png" alt="Diagnostic Scanner" class="w-full h-full object-cover">
+          </div>
         </div>
         
         <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
